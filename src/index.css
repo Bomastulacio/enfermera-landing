@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ── Design Tokens ── */
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --color-primary-50:  #eef7f4;
+  --color-primary-100: #d5ece3;
+  --color-primary-200: #addbc9;
+  --color-primary-300: #7cc4a9;
+  --color-primary-400: #4faa8a;
+  --color-primary-500: #369070;
+  --color-primary-600: #28745a;
+  --color-primary-700: #225d49;
+  --color-primary-800: #1e4b3c;
+  --color-primary-900: #1a3e33;
+  --color-primary-950: #0d231c;
+
+  --color-accent-50:  #fdf6ee;
+  --color-accent-100: #f9e8d0;
+  --color-accent-200: #f3ce9d;
+  --color-accent-300: #ecb069;
+  --color-accent-400: #e69643;
+  --color-accent-500: #df7a22;
+  --color-accent-600: #c5601a;
+  --color-accent-700: #a44718;
+  --color-accent-800: #86391a;
+  --color-accent-900: #6e3018;
+
+  --color-neutral-50:  #f5f5f7;
+  --color-neutral-100: #ececee;
+  --color-neutral-200: #dddde0;
+  --color-neutral-300: #c5c5ca;
+  --color-neutral-400: #a9a9b0;
+  --color-neutral-500: #91919a;
+  --color-neutral-600: #7e7e88;
+  --color-neutral-700: #6e6e77;
+  --color-neutral-800: #5c5c63;
+  --color-neutral-900: #4d4d52;
+  --color-neutral-950: #313134;
+}
+
+/* ── Base Styles ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-300);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-400);
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
