@@ -1,6 +1,6 @@
-# 🏥 Enfermera Landing — Silvia Quiroz
+# 🏥 Licenciada en Enfermería Landing — Silvia Quiroz
 
-Landing page profesional para servicios de enfermería a domicilio en Resistencia, Chaco.
+Landing page profesional para servicios de licenciada en enfermería a domicilio en Resistencia, Chaco.
 
 🌐 **Live:** [silviaquirozenfermera-web-app.web.app](https://silviaquirozenfermera-web-app.web.app)
 
