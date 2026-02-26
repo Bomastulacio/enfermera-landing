@@ -17,7 +17,7 @@ export default function ServiceCard({ service, index }) {
                 <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
                 />
                 {/* Hover overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
