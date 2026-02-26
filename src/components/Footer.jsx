@@ -14,11 +14,11 @@ export default function Footer() {
                                 </svg>
                             </div>
                             <span className="text-lg font-semibold text-white tracking-tight">
-                                Enf. Silvia
+                                Lic. Silvia
                             </span>
                         </div>
                         <p className="text-sm leading-relaxed max-w-xs">
-                            Enfermería profesional a domicilio. Cuidado personalizado con calidez humana y compromiso.
+                            Licenciada en enfermería a domicilio. Cuidado personalizado con calidez humana y compromiso.
                         </p>
                     </div>
 
@@ -78,7 +78,7 @@ export default function Footer() {
                 {/* Bottom bar */}
                 <div className="mt-14 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <p className="text-xs text-neutral-500">
-                        © {year} Enf. Silvia Quiroz. Todos los derechos reservados.
+                        © {year} Lic. Silvia Quiroz. Todos los derechos reservados.
                     </p>
                     <p className="text-xs text-neutral-600">
                         Diseñado con ❤️ para tu bienestar

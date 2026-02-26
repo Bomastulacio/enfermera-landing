@@ -20,7 +20,7 @@ export default function About() {
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-neutral-200/40">
                             <img
                                 src="/images/hero.png"
-                                alt="Enfermera profesional"
+                                alt="Licenciada en enfermería"
                                 className="w-full h-[500px] object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary-900/10 to-transparent" />
@@ -58,7 +58,7 @@ export default function About() {
                         </h2>
 
                         <p className="text-neutral-500 mb-6 leading-relaxed text-base">
-                            Soy Silvia Alejandra Quiroz, enfermera profesional matriculada con más de una década de experiencia en
+                            Soy Silvia Alejandra Quiroz, licenciada en enfermería con matrícula profesional y más de una década de experiencia en
                             atención domiciliaria. Mi vocación es brindar un cuidado integral, humano y de calidad
                             a cada uno de mis pacientes.
                         </p>

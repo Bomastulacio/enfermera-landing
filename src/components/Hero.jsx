@@ -88,7 +88,7 @@ export default function Hero() {
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary-200/30">
                             <img
                                 src="/images/hero.png"
-                                alt="Enfermera profesional brindando cuidado a domicilio"
+                                alt="Licenciada en enfermería brindando cuidado a domicilio"
                                 className="w-full h-[580px] object-cover"
                             />
                             {/* Gradient overlay */}

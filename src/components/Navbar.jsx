@@ -38,7 +38,7 @@ export default function Navbar() {
                             </svg>
                         </div>
                         <span className="text-lg font-semibold text-neutral-800 tracking-tight">
-                            Enf. <span className="text-primary-600">Silvia</span>
+                            Lic. <span className="text-primary-600">Silvia</span>
                         </span>
                     </a>
 
