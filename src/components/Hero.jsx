@@ -17,7 +17,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="flex flex-col items-center text-center lg:items-start lg:text-left gap-6"
+                        className="flex flex-col items-start text-left gap-6"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
@@ -29,14 +29,14 @@ export default function Hero() {
                             Cuidado profesional a domicilio
                         </motion.div>
 
-                        <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1] text-center lg:text-left">
+                        <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1]">
                             Tu salud,{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">
                                 nuestra prioridad
                             </span>
                         </h1>
 
-                        <p className="text-lg lg:text-xl text-neutral-500 max-w-lg leading-relaxed text-center lg:text-left mx-auto lg:mx-0">
+                        <p className="text-lg lg:text-xl text-neutral-500 max-w-lg leading-relaxed">
                             Atención de enfermería personalizada y profesional en la comodidad de tu hogar.
                             Más de 10 años de experiencia cuidando a quienes más importan.
                         </p>
