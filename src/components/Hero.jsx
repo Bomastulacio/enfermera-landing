@@ -20,22 +20,18 @@ export default function Hero() {
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                         className="flex flex-col items-start text-left gap-6 w-full"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <BrandAsset className="block md:hidden w-40 h-auto mb-6" />
-                        </motion.div>
-
+                        {/* Trust Block: Avatar + Badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100/60 text-primary-700 text-sm font-medium rounded-full backdrop-blur-sm"
+                            className="flex items-center gap-3 justify-start md:justify-start mb-6"
                         >
-                            <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-                            Cuidado profesional a domicilio
+                            <BrandAsset className="w-14 h-14 rounded-full border border-primary-100 mix-blend-multiply flex-shrink-0 md:hidden" />
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100/60 text-primary-700 text-sm font-medium rounded-full backdrop-blur-sm">
+                                <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
+                                Cuidado profesional a domicilio
+                            </div>
                         </motion.div>
 
                         <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1]">
