@@ -30,19 +30,11 @@ export default function Hero() {
                             Cuidado profesional a domicilio
                         </motion.div>
 
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.3, duration: 0.5 }}
-                            className="w-40 h-40 mx-auto lg:hidden my-2"
-                        >
-                            <BrandAsset className="w-full h-full rounded-2xl border-2 border-primary-100 shadow-md" />
-                        </motion.div>
-
                         <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1]">
-                            Tu salud,{' '}
+                            Tu salud es nuestra prioridad en{' '}
+                            <BrandAsset className="inline-block h-[1.1em] -mt-1 mr-2 align-middle bg-white" />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">
-                                nuestra prioridad
+                                Silvia Quiroz
                             </span>
                         </h1>
 
@@ -96,7 +88,7 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
                         className="hidden lg:flex relative justify-center items-center"
                     >
-                        <BrandAsset className="w-80 h-80 rounded-[2rem] border-4 border-primary-100 shadow-2xl shadow-primary-200/40 transform -rotate-2 hover:rotate-0 transition-all duration-500" />
+                        <BrandAsset className="w-80 h-80 rounded-[2rem] border-4 border-primary-100 shadow-2xl shadow-primary-200/40 transform -rotate-2 hover:rotate-0 transition-all duration-500 flex items-center justify-center bg-white" />
 
                         {/* Floating card */}
                         <motion.div

@@ -59,7 +59,7 @@ export default function ContactForm() {
                         </span>
 
                         <div className="flex items-center gap-4 mb-4">
-                            <BrandAsset className="w-16 h-16 rounded-full border-2 border-primary-100 shadow-sm" />
+                            <BrandAsset className="w-16 h-16 rounded-full border-2 border-primary-100 shadow-sm flex items-center justify-center bg-white" />
                             <div>
                                 <p className="text-sm font-semibold text-neutral-800">Lic. Silvia</p>
                                 <p className="text-xs text-primary-600">Atención directa</p>
