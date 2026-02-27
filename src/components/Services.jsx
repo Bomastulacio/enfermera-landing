@@ -3,30 +3,35 @@ import ServiceCard from './ServiceCard'
 
 const services = [
     {
-        title: 'Control y Seguimiento',
-        description: 'Monitoreo de signos vitales, control de glucemia, presión arterial y seguimiento post-quirúrgico personalizado.',
-        image: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=600&q=80',
+        title: 'Prevención de Escaras y Cuidado de la Piel',
+        description: 'Protección especializada y cambios posturales para evitar lesiones en pacientes encamados.',
+        image: '/images/service-1.png',
     },
     {
-        title: 'Curaciones y Heridas',
-        description: 'Tratamiento profesional de heridas, curaciones complejas, cuidado de úlceras y cambio de vendajes.',
-        image: 'https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=600&q=80',
+        title: 'Movilización y Asistencia al Paciente Postrado',
+        description: 'Técnicas seguras para mover y acomodar al paciente, mejorando su circulación y confort.',
+        image: '/images/service-2.png',
     },
     {
-        title: 'Administración de Medicación',
-        description: 'Aplicación de inyectables, sueros, medicación endovenosa y control de tratamientos farmacológicos.',
-        image: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&q=80',
+        title: 'Curaciones Complejas y Ostomías',
+        description: 'Manejo profesional de heridas quirúrgicas, úlceras y cuidado integral de ostomías.',
+        image: '/images/service-3.png',
     },
     {
-        title: 'Cuidado del Adulto Mayor',
-        description: 'Asistencia integral para personas mayores: higiene, movilización, acompañamiento y bienestar diario.',
-        image: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&q=80',
+        title: 'Higiene Integral y Confort',
+        description: 'Baño en cama y aseo personal diario para dignificar y refrescar al paciente.',
+        image: '/images/service-4.png',
     },
     {
-        title: 'Cuidados Post-Operatorios',
-        description: 'Seguimiento especializado tras intervenciones quirúrgicas, cuidado de drenajes y prevención de complicaciones.',
-        image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80',
+        title: 'Aplicación de Inyecciones (IM/SC)',
+        description: 'Administración segura de medicación intramuscular y subcutánea en domicilio.',
+        image: '/images/service-5.png',
     },
+    {
+        title: 'Terapia Endovenosa e Hidratación',
+        description: 'Colocación de sueros y medicación IV (realizado estrictamente bajo indicación médica escrita).',
+        image: '/images/service-6.png',
+    }
 ]
 
 export default function Services() {
