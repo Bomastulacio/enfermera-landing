@@ -12,14 +12,22 @@ export default function Hero() {
             <div className="absolute bottom-20 left-10 w-72 h-72 bg-accent-200/20 rounded-full blur-3xl" />
 
             <div className="relative max-w-7xl mx-auto px-8 lg:px-8 py-32">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="flex flex-col items-start max-w-3xl">
                     {/* Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
-                        className="flex flex-col items-start text-left gap-6"
+                        className="flex flex-col items-start text-left gap-6 w-full"
                     >
+                        <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <BrandAsset className="block md:hidden w-40 h-auto mb-6" />
+                        </motion.div>
+
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -31,10 +39,9 @@ export default function Hero() {
                         </motion.div>
 
                         <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1]">
-                            Tu salud es nuestra prioridad en{' '}
-                            <BrandAsset className="inline-block h-[1.1em] -mt-1 mr-2 align-middle bg-white" />
+                            Tu salud,{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">
-                                Silvia Quiroz
+                                nuestra prioridad
                             </span>
                         </h1>
 
@@ -79,36 +86,6 @@ export default function Hero() {
                                 <p className="text-xs text-neutral-400 mt-1">Disponibilidad</p>
                             </div>
                         </div>
-                    </motion.div>
-
-                    {/* Desktop Hero Image / Brand Asset */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 40, scale: 0.95 }}
-                        animate={{ opacity: 1, x: 0, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-                        className="hidden lg:flex relative justify-center items-center"
-                    >
-                        <BrandAsset className="w-80 h-80 rounded-[2rem] border-4 border-primary-100 shadow-2xl shadow-primary-200/40 transform -rotate-2 hover:rotate-0 transition-all duration-500 flex items-center justify-center bg-white" />
-
-                        {/* Floating card */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1, duration: 0.6 }}
-                            className="absolute -bottom-6 -left-8 z-20 bg-white rounded-2xl p-5 shadow-xl shadow-neutral-200/50"
-                        >
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                                    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p className="text-sm font-semibold text-neutral-800">Matrícula Verificada</p>
-                                    <p className="text-xs text-neutral-400">Profesional habilitada</p>
-                                </div>
-                            </div>
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>
