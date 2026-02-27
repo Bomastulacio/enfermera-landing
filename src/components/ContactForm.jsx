@@ -100,8 +100,13 @@ export default function ContactForm() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
                         <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-neutral-100/50 border border-neutral-100 flex flex-col justify-center h-full">
-                            <div className="mb-6">
-                                <h3 className="text-2xl lg:text-3xl font-bold text-neutral-800 mb-4 font-sans focus:outline-none">Solicitar Turno</h3>
+                            <div className="mb-6 text-center lg:text-left">
+                                <span className="inline-block px-3 py-1.5 bg-primary-100/60 text-primary-700 text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">
+                                    Contáctame Directo
+                                </span>
+                                <h3 className="text-3xl lg:text-4xl font-bold text-neutral-800 mb-4 font-sans focus:outline-none uppercase">
+                                    Solicitar<br />Turno
+                                </h3>
                                 <p className="text-base text-neutral-500 mb-8 leading-relaxed max-w-md">
                                     Haz clic en el botón para escribirme directamente por WhatsApp. Te responderé a la brevedad para coordinar tu atención.
                                 </p>
