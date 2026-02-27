@@ -37,7 +37,7 @@ export default function ContactForm() {
                             </span>
                         </h2>
                         <p className="text-neutral-500 mb-10 leading-relaxed text-base max-w-md">
-                            Completá el formulario y me pondré en contacto contigo a la brevedad para coordinar una visita.
+                            Escríbeme directamente por WhatsApp o envíame un correo electrónico. Te responderé a la brevedad para resolver tus dudas y coordinar la atención en tu domicilio.
                         </p>
 
                         {/* Contact Info Cards */}
