@@ -1,43 +1,7 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { submitContactForm } from '../firebase/contactService'
+import { motion } from 'framer-motion'
 import BrandAsset from './BrandAsset'
 
-const serviceOptions = [
-    'Control y Seguimiento',
-    'Curaciones y Heridas',
-    'Administración de Medicación',
-    'Cuidado del Adulto Mayor',
-    'Cuidados Post-Operatorios',
-    'Otro',
-]
-
 export default function ContactForm() {
-    const [form, setForm] = useState({
-        nombre: '',
-        telefono: '',
-        tipoServicio: '',
-        mensaje: '',
-    })
-    const [status, setStatus] = useState('idle') // idle | sending | success | error
-
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value })
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        setStatus('sending')
-        try {
-            await submitContactForm(form)
-            setStatus('success')
-            setForm({ nombre: '', telefono: '', tipoServicio: '', mensaje: '' })
-        } catch (err) {
-            console.error('Error al enviar formulario:', err)
-            setStatus('error')
-        }
-    }
-
     return (
         <section id="contacto" className="py-28 lg:py-36 relative overflow-hidden">
             {/* Background */}
@@ -82,11 +46,11 @@ export default function ContactForm() {
                                 {
                                     icon: (
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                         </svg>
                                     ),
-                                    label: 'WhatsApp',
-                                    value: '+54 9 362 4746-392',
+                                    label: 'Correo Electrónico',
+                                    value: 'contacto@silviaquirozenfermeria.com',
                                 },
                                 {
                                     icon: (
@@ -135,152 +99,28 @@ export default function ContactForm() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <form
-                            onSubmit={handleSubmit}
-                            className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl shadow-neutral-100/50 border border-neutral-100"
-                        >
-                            <h3 className="text-2xl font-bold text-neutral-800 mb-2 font-sans">Solicitar Turno</h3>
-                            <p className="text-sm text-neutral-400 mb-8">Todos los campos son obligatorios</p>
-
-                            <div className="space-y-5">
-                                {/* Nombre */}
-                                <div>
-                                    <label htmlFor="nombre" className="block text-sm font-medium text-neutral-600 mb-2">
-                                        Nombre Completo
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="nombre"
-                                        name="nombre"
-                                        required
-                                        value={form.nombre}
-                                        onChange={handleChange}
-                                        placeholder="Ej: María García"
-                                        className="w-full px-4 py-3.5 text-sm bg-neutral-50 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-300 placeholder:text-neutral-300"
-                                    />
-                                </div>
-
-                                {/* Teléfono */}
-                                <div>
-                                    <label htmlFor="telefono" className="block text-sm font-medium text-neutral-600 mb-2">
-                                        Teléfono (WhatsApp)
-                                    </label>
-                                    <input
-                                        type="tel"
-                                        id="telefono"
-                                        name="telefono"
-                                        required
-                                        value={form.telefono}
-                                        onChange={handleChange}
-                                        placeholder="Ej: +54 9 11 1234-5678"
-                                        className="w-full px-4 py-3.5 text-sm bg-neutral-50 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-300 placeholder:text-neutral-300"
-                                    />
-                                </div>
-
-                                {/* Tipo de Servicio */}
-                                <div>
-                                    <label htmlFor="tipoServicio" className="block text-sm font-medium text-neutral-600 mb-2">
-                                        Tipo de Servicio
-                                    </label>
-                                    <select
-                                        id="tipoServicio"
-                                        name="tipoServicio"
-                                        required
-                                        value={form.tipoServicio}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3.5 text-sm bg-neutral-50 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-300 appearance-none cursor-pointer"
-                                        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239CA3AF' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 12px center', backgroundSize: '20px' }}
-                                    >
-                                        <option value="" disabled>Seleccioná un servicio</option>
-                                        {serviceOptions.map((opt) => (
-                                            <option key={opt} value={opt}>{opt}</option>
-                                        ))}
-                                    </select>
-                                </div>
-
-                                {/* Mensaje */}
-                                <div>
-                                    <label htmlFor="mensaje" className="block text-sm font-medium text-neutral-600 mb-2">
-                                        Mensaje
-                                    </label>
-                                    <textarea
-                                        id="mensaje"
-                                        name="mensaje"
-                                        required
-                                        rows={4}
-                                        value={form.mensaje}
-                                        onChange={handleChange}
-                                        placeholder="Contame brevemente qué necesitás..."
-                                        className="w-full px-4 py-3.5 text-sm bg-neutral-50 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all duration-300 resize-none placeholder:text-neutral-300"
-                                    />
-                                </div>
+                        <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl shadow-neutral-100/50 border border-neutral-100 flex flex-col justify-center h-full">
+                            <div className="mb-6">
+                                <h3 className="text-2xl lg:text-3xl font-bold text-neutral-800 mb-4 font-sans focus:outline-none">Solicitar Turno</h3>
+                                <p className="text-base text-neutral-500 mb-8 leading-relaxed max-w-md">
+                                    Haz clic en el botón para escribirme directamente por WhatsApp. Te responderé a la brevedad para coordinar tu atención.
+                                </p>
                             </div>
 
-                            {/* Submit Button */}
-                            <motion.button
-                                type="submit"
-                                disabled={status === 'sending'}
-                                whileHover={status !== 'sending' ? { scale: 1.01, y: -1 } : {}}
-                                whileTap={status !== 'sending' ? { scale: 0.99 } : {}}
-                                className={`w-full mt-8 py-4 text-base font-semibold rounded-2xl transition-all duration-300 
-                  ${status === 'sending'
-                                        ? 'bg-neutral-300 text-neutral-500 cursor-not-allowed'
-                                        : 'bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg shadow-primary-400/25 hover:shadow-primary-500/30 hover:from-primary-600 hover:to-primary-700'
-                                    }`}
+                            <motion.a
+                                href="https://wa.me/5493624746392?text=Hola,%20me%20gustar%C3%ADa%20solicitar%20un%20turno%20o%20hacer%20una%20consulta."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.02, y: -2 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="w-full flex items-center justify-center gap-3 py-4 text-base font-semibold rounded-2xl transition-all duration-300 bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-lg shadow-primary-400/25 hover:shadow-primary-500/30 hover:from-primary-600 hover:to-primary-700"
                             >
-                                {status === 'sending' ? (
-                                    <span className="flex items-center justify-center gap-2">
-                                        <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                        </svg>
-                                        Enviando...
-                                    </span>
-                                ) : (
-                                    'Enviar Solicitud'
-                                )}
-                            </motion.button>
-
-                            {/* Status Messages */}
-                            <AnimatePresence>
-                                {status === 'success' && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -10 }}
-                                        className="mt-5 p-4 bg-primary-50 border border-primary-200 rounded-xl flex items-center gap-3"
-                                    >
-                                        <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-semibold text-primary-800">¡Gracias por tu mensaje!</p>
-                                            <p className="text-xs text-primary-600">Te contactaremos a la brevedad.</p>
-                                        </div>
-                                    </motion.div>
-                                )}
-                                {status === 'error' && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -10 }}
-                                        className="mt-5 p-4 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3"
-                                    >
-                                        <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-semibold text-red-800">Error al enviar</p>
-                                            <p className="text-xs text-red-600">Por favor, intentá nuevamente o contactanos por WhatsApp.</p>
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </form>
+                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                                </svg>
+                                Solicitar Turno por WhatsApp
+                            </motion.a>
+                        </div>
                     </motion.div>
                 </div>
             </div>
