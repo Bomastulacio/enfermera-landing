@@ -27,7 +27,7 @@ export default function Hero() {
                             transition={{ delay: 0.2, duration: 0.5 }}
                             className="flex items-center gap-3 md:gap-4 justify-start md:justify-start mb-6 md:mb-8"
                         >
-                            <BrandAsset className="w-14 h-14 md:w-20 md:h-20 rounded-full border border-primary-100 md:border-2 md:shadow-sm mix-blend-multiply flex-shrink-0" />
+                            <BrandAsset className="w-14 h-14 md:w-28 md:h-28 rounded-full border border-primary-100 md:border-2 md:shadow-sm mix-blend-multiply flex-shrink-0" />
                             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100/60 text-primary-700 text-sm font-medium rounded-full backdrop-blur-sm">
                                 <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
                                 Cuidado profesional a domicilio
