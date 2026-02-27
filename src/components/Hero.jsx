@@ -51,7 +51,7 @@ export default function Hero() {
                                 href="#contacto"
                                 whileHover={{ scale: 1.03, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl shadow-xl shadow-primary-400/25 hover:shadow-primary-500/30 transition-shadow duration-300"
+                                className="w-auto sm:w-auto flex items-center justify-center px-6 md:px-8 py-2.5 md:py-4 text-base font-semibold text-white bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl shadow-xl shadow-primary-400/25 hover:shadow-primary-500/30 transition-shadow duration-300"
                             >
                                 Agendar Turno
                             </motion.a>
@@ -59,7 +59,7 @@ export default function Hero() {
                                 href="#servicios"
                                 whileHover={{ scale: 1.03, y: -2 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="w-full sm:w-auto flex items-center justify-center px-8 py-4 text-base font-semibold text-primary-700 bg-white border-2 border-primary-200 rounded-2xl hover:border-primary-300 hover:bg-primary-50/50 transition-all duration-300"
+                                className="w-auto sm:w-auto flex items-center justify-center px-6 md:px-8 py-2.5 md:py-4 text-base font-semibold text-primary-700 bg-white border-2 border-primary-200 rounded-2xl hover:border-primary-300 hover:bg-primary-50/50 transition-all duration-300"
                             >
                                 Ver Servicios
                             </motion.a>
