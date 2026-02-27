@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { submitContactForm } from '../firebase/contactService'
+import BrandAsset from './BrandAsset'
 
 const serviceOptions = [
     'Control y Seguimiento',
@@ -56,6 +57,15 @@ export default function ContactForm() {
                         <span className="inline-block px-3 py-1.5 bg-primary-100/60 text-primary-700 text-xs font-semibold rounded-full mb-6 tracking-wide uppercase">
                             Contacto
                         </span>
+
+                        <div className="flex items-center gap-4 mb-4">
+                            <BrandAsset className="w-16 h-16 rounded-full border-2 border-primary-100 shadow-sm" />
+                            <div>
+                                <p className="text-sm font-semibold text-neutral-800">Lic. Silvia</p>
+                                <p className="text-xs text-primary-600">Atención directa</p>
+                            </div>
+                        </div>
+
                         <h2 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
                             Hablemos sobre{' '}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-700">

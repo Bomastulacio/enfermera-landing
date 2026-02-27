@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import BrandAsset from './BrandAsset'
 
 export default function Hero() {
     return (
@@ -27,6 +28,15 @@ export default function Hero() {
                         >
                             <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
                             Cuidado profesional a domicilio
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
+                            className="w-40 h-40 mx-auto lg:hidden my-2"
+                        >
+                            <BrandAsset className="w-full h-full rounded-2xl border-2 border-primary-100 shadow-md" />
                         </motion.div>
 
                         <h1 className="text-5xl lg:text-7xl font-bold text-neutral-900 leading-[1.1]">
@@ -79,22 +89,15 @@ export default function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Hero Image */}
+                    {/* Desktop Hero Image / Brand Asset */}
                     <motion.div
                         initial={{ opacity: 0, x: 40, scale: 0.95 }}
                         animate={{ opacity: 1, x: 0, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
-                        className="hidden lg:block relative"
+                        className="hidden lg:flex relative justify-center items-center"
                     >
-                        <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary-200/30">
-                            <img
-                                src="/images/hero.png"
-                                alt="Licenciada en enfermería brindando cuidado a domicilio"
-                                className="w-full h-[580px] object-cover"
-                            />
-                            {/* Gradient overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary-900/20 via-transparent to-transparent" />
-                        </div>
+                        <BrandAsset className="w-80 h-80 rounded-[2rem] border-4 border-primary-100 shadow-2xl shadow-primary-200/40 transform -rotate-2 hover:rotate-0 transition-all duration-500" />
+
                         {/* Floating card */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
